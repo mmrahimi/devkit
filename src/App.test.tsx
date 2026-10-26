@@ -7,6 +7,6 @@ describe('App', () => {
     render(<App />);
 
     expect(screen.getByRole('heading', { name: 'DevKit' })).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('A growing collection of practical developer utilities.')).toBeInTheDocument();
+    expect(screen.getByText('A growing collection of practical developer utilities.')).toBeInTheDocument();
   });
 });
