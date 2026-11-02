@@ -2,11 +2,12 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import App from './App';
 
-describe('App', () => {
-  it('renders the DevKit heading and description', () => {
+describe('DevKit home', () => {
+  it('introduces DevKit and links to the available Stacker tool', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: 'DevKit' })).toBeInTheDocument();
-    expect(screen.getByText('A growing collection of practical developer utilities.')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Useful little tools/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Open Stacker/ })).toHaveAttribute('href', '/tools/stacker');
+    expect(screen.getByRole('link', { name: 'DevKit home' })).toHaveAttribute('href', '/');
   });
 });
