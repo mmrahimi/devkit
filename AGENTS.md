@@ -6,6 +6,7 @@ Read this file before changing the project. It records the product identity and 
 
 - DevKit is a growing collection of focused, practical tools for developers. The home page is the front door to the collection; individual tools are destinations within it.
 - Stacker is the first tool, not the whole product. Keep shared site identity and navigation separate from tool-specific experiences so more tools can be added cleanly.
+- Markpad is the second tool. Future tools follow the same collection model and live alongside Stacker, rather than inside it.
 - The project is a hobby product shipped through Vercel. Keep the experience useful, polished, and understandable without adding enterprise complexity.
 - The user is learning by building and will review, adjust, and verify the work. Explain decisions plainly when asked; do not turn implementation replies into tutorials.
 
@@ -27,6 +28,14 @@ Read this file before changing the project. It records the product identity and 
 - The completed diagram follows catalogue order, omits empty categories, and connects selected entries with simple arrows. The arrows show sequence, not technical dependencies.
 - PNG is the only export format. Generate it in the browser, keep the export-only diagram off-screen, and report export failures clearly.
 
+## Current Markpad decisions
+
+- Markpad is a single-document Markdown editor. Start with an empty document; keep its content in page state only, with no persistence or document management.
+- Provide Edit and Preview tabs, an optional Load example action, and Copy Markdown. Do not add a formatting toolbar, extra templates, upload/download, or rich-text editing.
+- Use established Markdown libraries for CommonMark and GFM. Do not build a parser. Keep Markdown rendering secure; do not enable raw HTML rendering without an explicit product decision.
+- Copy the exact source string, not rendered HTML, and show a clear error if clipboard access fails.
+- Markpad implementation and tests live in `src/Tools/Markpad/`, following the same `pages`, `components`, and `tests` structure as Stacker.
+
 ## Structure and ownership
 
 - `src/App.tsx` chooses the page for the current route. Keep app-level routing small and explicit.
@@ -39,6 +48,7 @@ Read this file before changing the project. It records the product identity and 
 - `src/Tools/Stacker/selection.ts` owns selection rules, separate from presentation.
 - `src/Tools/Stacker/png-export.ts` owns browser-side PNG generation and download behavior.
 - Put Stacker tests in `src/Tools/Stacker/tests/`; keep app-level tests beside the app source under `src/`.
+- `src/Tools/Markpad/pages/` contains the Markpad page, `components/` contains its preview pieces, and `tests/` contains its feature tests.
 - Keep modules focused and readable. Prefer direct imports and small functions over extra layers, generic frameworks, or new state-management libraries.
 
 ## Styling and visual identity
@@ -54,6 +64,7 @@ Read this file before changing the project. It records the product identity and 
 
 - Use bundled local logo assets. The current catalogue uses Simple Icons where appropriate and custom SVG marks for concepts without a suitable brand logo.
 - Never depend on a third-party logo server at runtime. Avoid broken-image states; every technology needs an identifiable mark.
+- Markpad uses `react-markdown` and `remark-gfm` for Markdown/GFM rendering. Keep the parser real in feature tests and mock only the browser clipboard boundary where needed.
 - Prefer existing dependencies and project conventions. Add a dependency or change configuration only when the feature needs it and the simpler existing approach is insufficient.
 - Keep TypeScript strictness, lint rules, tests, and CI intact. Do not weaken quality gates to make a change appear complete.
 
@@ -62,7 +73,6 @@ Read this file before changing the project. It records the product identity and 
 - Tests are product feature specifications and a key verification step, not coverage targets or a way to make changes look complete. Write a small number of clear feature tests that state what users can do and what outcome they should see.
 - Implement behavior to satisfy the intended product rules captured by those tests. Do not relax, rewrite, or delete a meaningful assertion just to get a green result. If a failing test only depends on an implementation detail (such as a CSS class name), replace it with a user-visible behavior assertion; if the feature is actually broken, fix the source.
 - When the user asks for verification, run the narrowest relevant feature tests with a bounded command and report the actual result. Do not ask the user to run checks. Do not run broad builds, lint, or manual browser checks unless requested or needed to resolve a concrete issue.
-- Never run a command indefinitely. Use bounded commands and stop to reason with the user if a real blocker repeats or an important product decision cannot be inferred.
 - Never run a command indefinitely. Use bounded commands and stop to reason with the user if a real blocker repeats or an important product decision cannot be inferred.
 - Make authorized, reversible project changes without asking for redundant permission. Do not claim system-wide permissions or imply that code has been deployed or verified when it has not.
 - Keep progress and final messages concise. State what changed, the reason, and whether checks were run. When linking project files in chat, use clickable absolute file links.

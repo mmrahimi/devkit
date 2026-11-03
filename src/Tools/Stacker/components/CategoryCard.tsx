@@ -16,7 +16,7 @@ export function CategoryCard({ category, selectedId, disabled = false, onToggle 
       <div className="flex min-h-11 items-center justify-between gap-3">
         <div><p className="mb-1 mt-0 text-xs font-bold tracking-wider text-slate-500">TECHNOLOGY CATEGORY</p><h3 id={titleId} className="m-0 text-lg font-semibold tracking-tight text-slate-100">{category.name}</h3></div>
       </div>
-      <div className="mt-4 flex flex-wrap content-start justify-start gap-2" role="group" aria-label={`${category.name} technologies`}>
+<div className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(6rem,1fr))] gap-2" role="group" aria-label={`${category.name} technologies`}>
         {category.technologies.map((technology) => (
           <TechnologyOption key={technology.id} selected={selectedId === technology.id} disabled={disabled} technology={technology} onClick={() => onToggle(technology)} />
         ))}
