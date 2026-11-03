@@ -28,11 +28,14 @@ export function HomePage() {
             aria-label="Open Stacker tool"
           >
             <div className="pointer-events-none relative grid min-h-72 place-items-center overflow-hidden border-r border-violet-300/10 bg-gradient-to-br from-violet-950/50 via-slate-900 to-sky-950/40 max-sm:min-h-52 max-sm:border-b max-sm:border-r-0" aria-hidden="true">
-              <span className="grid size-24 -rotate-6 grid-cols-2 gap-2 rounded-2xl border border-violet-200/30 bg-slate-900/70 p-2 shadow-2xl shadow-violet-500/20 transition duration-300 group-hover:rotate-0 group-hover:scale-105">
-                <i className="rounded-lg bg-gradient-to-br from-violet-300 to-violet-600" />
-                <i className="rounded-lg bg-gradient-to-br from-sky-300 to-blue-600" />
-                <i className="rounded-lg bg-gradient-to-br from-teal-200 to-cyan-600" />
-                <i className="rounded-lg bg-gradient-to-br from-fuchsia-300 to-violet-600" />
+              <span className="grid size-24 place-items-center rounded-2xl border border-violet-200/30 bg-slate-900/70 shadow-2xl shadow-violet-500/20 transition duration-300 group-hover:-translate-y-1 group-hover:shadow-violet-400/30">
+                <svg className="size-16 drop-shadow-lg" viewBox="0 0 96 96" fill="none">
+                  <path d="M48 9v8m0 20v8m0 20v8" stroke="#a78bfa" strokeWidth="4" strokeLinecap="round" />
+                  <rect x="32" y="13" width="32" height="18" rx="6" fill="#a78bfa" />
+                  <rect x="20" y="41" width="56" height="18" rx="6" fill="#60a5fa" />
+                  <rect x="8" y="69" width="80" height="18" rx="6" fill="#5eead4" />
+                  <path d="M40 22h16m-28 28h40M18 78h60" stroke="#0f172a" strokeOpacity=".65" strokeWidth="3" strokeLinecap="round" />
+                </svg>
               </span>
               <span className="absolute bottom-7 text-xs font-bold tracking-widest text-slate-400">CHOOSE · CONNECT · CREATE</span>
             </div>
@@ -41,6 +44,31 @@ export function HomePage() {
               <h3 className="mb-2 mt-5 text-4xl font-semibold tracking-tight text-white max-sm:text-3xl">Stacker</h3>
               <p className="m-0 max-w-sm text-sm leading-6 text-slate-400">Choose the technologies behind your next idea and turn them into a diagram you can share.</p>
               <span className="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-violet-200">Open Stacker <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a
+            className="group relative z-10 mt-5 grid min-h-64 w-full cursor-pointer grid-cols-2 overflow-hidden rounded-2xl border border-violet-300/20 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/50 text-inherit no-underline shadow-xl shadow-black/20 transition duration-200 hover:-translate-y-1 hover:border-sky-300/40 hover:shadow-2xl hover:shadow-blue-950/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 max-sm:grid-cols-1"
+            href="/tools/markpad"
+            aria-label="Open Markpad tool"
+          >
+            <div className="pointer-events-none relative grid min-h-64 place-items-center overflow-hidden border-r border-sky-300/10 bg-gradient-to-br from-blue-950/50 via-slate-900 to-violet-950/40 max-sm:min-h-48 max-sm:border-b max-sm:border-r-0" aria-hidden="true">
+              <span className="grid size-20 place-items-center rounded-2xl border border-sky-200/30 bg-slate-900/70 shadow-2xl shadow-blue-500/20 transition duration-300 group-hover:-translate-y-1 group-hover:shadow-sky-500/30">
+                <svg className="size-14 drop-shadow-lg" viewBox="0 0 80 80" fill="none">
+                  <path d="M20 10h27l14 14v46H20V10Z" fill="#172554" stroke="#7dd3fc" strokeWidth="3" strokeLinejoin="round" />
+                  <path d="M47 10v15h14" stroke="#7dd3fc" strokeWidth="3" strokeLinejoin="round" />
+                  <path d="m29 39 2-9m10 9 2-9m-17 5h20m-21 9h20" stroke="#c4b5fd" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M29 53h17m-17 8h12" stroke="#64748b" strokeWidth="3" strokeLinecap="round" />
+                  <path d="m49 54 8-8 6 6-8 8-8 2 2-8Z" fill="#38bdf8" stroke="#bae6fd" strokeWidth="2" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span className="absolute bottom-6 font-mono text-xs tracking-widest text-slate-400"># WRITE · PREVIEW</span>
+            </div>
+            <div className="pointer-events-none flex flex-col items-start justify-center p-10 max-md:p-7 max-sm:p-6">
+              <div className="flex w-full items-center justify-between"><span className="text-xs font-bold tracking-widest text-sky-300">MARKDOWN</span><span className="text-2xl text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-sky-200">↗</span></div>
+              <h3 className="mb-2 mt-5 text-4xl font-semibold tracking-tight text-white max-sm:text-3xl">Markpad</h3>
+              <p className="m-0 max-w-sm text-sm leading-6 text-slate-400">Write Markdown, preview the rendered document, and copy the original text.</p>
+              <span className="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-sky-200">Open Markpad <span aria-hidden="true">→</span></span>
             </div>
           </a>
 

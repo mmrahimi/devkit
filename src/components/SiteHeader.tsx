@@ -1,4 +1,4 @@
-type SiteHeaderProps = { currentPage: 'home' | 'stacker' };
+type SiteHeaderProps = { currentPage: 'home' | 'stacker' | 'markpad' };
 
 export function SiteHeader({ currentPage }: SiteHeaderProps) {
   return (
@@ -12,11 +12,13 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
         </span>
         <span>devkit<span className="text-violet-400">.</span></span>
       </a>
-      <nav className="flex items-center gap-3" aria-label="Main navigation">
-        <a className={`text-sm font-semibold text-slate-400 no-underline transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300 ${currentPage === 'home' ? 'text-white' : ''}`} href="/">Tools</a>
-        {currentPage === 'stacker' && <span className="text-sm text-slate-600">/</span>}
-        {currentPage === 'stacker' && <span className="text-sm font-semibold text-white">Stacker</span>}
-      </nav>
+      {currentPage !== 'home' && (
+        <nav className="flex items-center gap-3" aria-label="Main navigation">
+          <a className="text-sm font-semibold text-slate-400 no-underline transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="/">Tools</a>
+          <span className="text-sm text-slate-600">/</span>
+          <span className="text-sm font-semibold text-white">{currentPage === 'stacker' ? 'Stacker' : 'Markpad'}</span>
+        </nav>
+      )}
     </header>
   );
 }

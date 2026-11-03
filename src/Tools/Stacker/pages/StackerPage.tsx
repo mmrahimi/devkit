@@ -48,7 +48,7 @@ export function StackerPage() {
         <SiteHeader currentPage="stacker" />
 
         <section className="py-16 pb-8 max-sm:pt-12" aria-labelledby="stacker-title">
-          <p className="mb-6 flex items-center gap-2 text-xs font-bold tracking-widest text-violet-300 max-sm:mb-4"><span className="h-px w-5 bg-gradient-to-r from-violet-400 to-sky-400" /> DEVKIT TOOL</p>
+          <p className="mb-6 flex items-center gap-2 text-xs font-bold tracking-widest text-violet-300 max-sm:mb-4"><span className="h-px w-5 bg-gradient-to-r from-violet-400 to-sky-400" /> STACK PICKER</p>
           <div className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start max-sm:gap-4">
             <div>
               <h1 id="stacker-title" className="m-0 text-6xl font-bold leading-none tracking-tight text-white max-sm:text-5xl">Stacker<span className="text-violet-400">.</span></h1>
