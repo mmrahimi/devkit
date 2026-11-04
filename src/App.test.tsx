@@ -14,6 +14,8 @@ describe('DevKit home', () => {
     expect(screen.queryByRole('link', { name: 'Browse tools' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Open Stacker/ })).toHaveAttribute('href', '/tools/stacker');
     expect(screen.getByRole('link', { name: 'Open Markpad tool' })).toHaveAttribute('href', '/tools/markpad');
+    expect(screen.getByRole('link', { name: 'Open ComposeLab tool' })).toHaveAttribute('href', '/tools/composelab');
+    expect(screen.queryByText('More tools are taking shape.')).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'DevKit home' })).toHaveAttribute('href', '/');
   });
 
@@ -23,5 +25,13 @@ describe('DevKit home', () => {
 
     expect(screen.getByRole('heading', { name: 'Markpad.' })).toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: 'Markdown source' })).toBeInTheDocument();
+  });
+
+  it('opens ComposeLab for its tool route', () => {
+    window.history.replaceState({}, '', '/tools/composelab');
+    render(<App />);
+
+    expect(screen.getByRole('heading', { name: 'ComposeLab.' })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'Configure' })).toBeInTheDocument();
   });
 });
