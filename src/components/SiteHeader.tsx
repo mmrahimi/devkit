@@ -1,4 +1,5 @@
-type SiteHeaderProps = { currentPage: 'home' | 'stacker' | 'markpad' };
+type SiteHeaderProps = { currentPage: 'home' | 'stacker' | 'markpad' | 'composelab' };
+const pageTitles = { home: 'Home', stacker: 'Stacker', markpad: 'Markpad', composelab: 'ComposeLab' };
 
 export function SiteHeader({ currentPage }: SiteHeaderProps) {
   return (
@@ -16,7 +17,7 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
         <nav className="flex items-center gap-3" aria-label="Main navigation">
           <a className="text-sm font-semibold text-slate-400 no-underline transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300" href="/">Tools</a>
           <span className="text-sm text-slate-600">/</span>
-          <span className="text-sm font-semibold text-white">{currentPage === 'stacker' ? 'Stacker' : 'Markpad'}</span>
+          <span className="text-sm font-semibold text-white">{pageTitles[currentPage]}</span>
         </nav>
       )}
     </header>

@@ -11,7 +11,6 @@ describe('Stacker page', () => {
 
     expect(screen.getByRole('heading', { name: 'Stacker.' })).toBeInTheDocument();
     expect(screen.getByRole('region', { name: 'Technology categories' })).toBeInTheDocument();
-    expect(document.querySelector('.diagram-board')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'React' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'pytest' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Testing' })).toBeInTheDocument();

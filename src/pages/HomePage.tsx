@@ -1,5 +1,7 @@
 import { SiteHeader } from '../components/SiteHeader';
 
+import { siDocker } from 'simple-icons';
+
 const eyebrow = 'flex items-center gap-2 text-xs font-bold tracking-widest text-violet-300';
 
 export function HomePage() {
@@ -62,7 +64,7 @@ export function HomePage() {
                   <path d="m49 54 8-8 6 6-8 8-8 2 2-8Z" fill="#38bdf8" stroke="#bae6fd" strokeWidth="2" strokeLinejoin="round" />
                 </svg>
               </span>
-              <span className="absolute bottom-6 font-mono text-xs tracking-widest text-slate-400"># WRITE · PREVIEW</span>
+              <span className="absolute bottom-7 text-xs font-bold tracking-widest text-slate-400"># WRITE · PREVIEW</span>
             </div>
             <div className="pointer-events-none flex flex-col items-start justify-center p-10 max-md:p-7 max-sm:p-6">
               <div className="flex w-full items-center justify-between"><span className="text-xs font-bold tracking-widest text-sky-300">MARKDOWN</span><span className="text-2xl text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-sky-200">↗</span></div>
@@ -72,7 +74,27 @@ export function HomePage() {
             </div>
           </a>
 
-          <div className="mt-7 flex items-center gap-3 text-sm text-slate-500">💜<span className="text-lg text-violet-400"></span><span>More tools are taking shape.</span><span className="h-px w-12 bg-gradient-to-r from-violet-500/40 to-transparent" /></div>
+          <a
+            className="group relative z-10 mt-5 grid min-h-64 w-full cursor-pointer grid-cols-2 overflow-hidden rounded-2xl border border-violet-300/20 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50 text-inherit no-underline shadow-xl shadow-black/20 transition duration-200 hover:-translate-y-1 hover:border-violet-300/40 hover:shadow-2xl hover:shadow-indigo-950/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 max-sm:grid-cols-1"
+            href="/tools/composelab"
+            aria-label="Open ComposeLab tool"
+          >
+            <div className="pointer-events-none relative grid min-h-64 place-items-center overflow-hidden border-r border-violet-300/10 bg-gradient-to-br from-indigo-950/50 via-slate-900 to-sky-950/40 max-sm:min-h-48 max-sm:border-b max-sm:border-r-0" aria-hidden="true">
+              <span className="grid size-20 place-items-center rounded-2xl border border-violet-200/30 bg-slate-900/70 shadow-2xl shadow-indigo-500/20 transition duration-300 group-hover:-translate-y-1 group-hover:shadow-violet-500/30">
+                <svg className="size-14 drop-shadow-lg" viewBox="0 0 24 24" fill="none">
+                  <path d={siDocker.path} fill="#2496ed" />
+                </svg>
+              </span>
+              <span className="absolute bottom-7 text-xs font-bold tracking-widest text-slate-400">SERVICES · YAML</span>
+            </div>
+            <div className="pointer-events-none flex flex-col items-start justify-center p-10 max-md:p-7 max-sm:p-6">
+              <div className="flex w-full items-center justify-between"><span className="text-xs font-bold tracking-widest text-violet-300">DOCKER COMPOSE</span><span className="text-2xl text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-200">↗</span></div>
+              <h3 className="mb-2 mt-5 text-4xl font-semibold tracking-tight text-white max-sm:text-3xl">ComposeLab</h3>
+              <p className="m-0 max-w-sm text-sm leading-6 text-slate-400">Configure services visually, then preview and download your Compose file.</p>
+              <span className="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-violet-200">Open ComposeLab <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
         </section>
 
         <footer className="flex min-h-16 items-center justify-between border-t border-violet-200/10 text-xs text-slate-500"><span>Small utilities for people who make things.</span><span>DEVKIT © 2026</span></footer>
